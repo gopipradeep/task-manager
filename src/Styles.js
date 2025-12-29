@@ -2,61 +2,59 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   min-height: 100vh;
-  background-color: #0f172a;
+  background-color: #05070a;
   color: #f8fafc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
+  padding: 40px;
   font-family: 'Inter', sans-serif;
 `;
 
 export const Card = styled.div`
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid #334155;
-  border-radius: 16px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 500px;
+  background: #111827;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #1f2937;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 `;
 
-export const InputGroup = styled.form`
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-`;
-
 export const Input = styled.input`
-  flex: 1;
+  width: 100%;
   background: #1e293b;
-  border: 1px solid #475569;
-  border-radius: 8px;
+  border: 1px solid #334155;
+  border-radius: 10px;
   padding: 12px;
   color: white;
-  &:focus { outline: 2px solid #3b82f6; }
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Makes the calendar icon white */
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+  }
 `;
 
 export const Button = styled.button`
   background: #3b82f6;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 0 20px;
+  border-radius: 10px;
+  padding: 12px 24px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: 0.3s;
   &:hover { background: #2563eb; }
 `;
 
-export const TaskRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #1e293b;
-  margin-bottom: 10px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  border-left: 4px solid ${props => props.completed ? '#10b981' : '#3b82f6'};
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin-top: 30px;
 `;
